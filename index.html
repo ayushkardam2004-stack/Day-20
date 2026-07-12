@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Patient Registry</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" >
+</head>
+<body>
+
+    <div class="main-wrapper">
+        <div class="image-section">
+            <div style="font-size: 6.5rem; filter: drop-shadow(0 15px 20px rgba(5, 150, 105, 0.25)); animation: float 4s ease-in-out infinite; margin-bottom: 10px; user-select: none;">🧑‍⚕️🛌👩‍⚕️</div>
+            <h3 style="margin: 1rem 0 0 0; font-weight: 800; font-size: 1.3rem; color: #064e3b; letter-spacing: -0.02em;">Smart Care Registry</h3>
+            <p style="margin: 6px 0 0 0; font-size: 0.9rem; color: #14532d; opacity: 0.8; font-weight: 500;">Empowering healthcare with clean data.</p>
+        </div>
+
+        <div class="form-section">
+          
+            <h1>Hospital Patient Registry</h1>
+            
+            <form action="/register" method="POST" autocomplete="off">
+                <div class="form-group">
+                    <label for="studentName">Patient Name</label>
+                    <div class="input-wrapper">
+                       
+                        <input type="text" id="studentName" name="studentName" placeholder="Enter full name" maxlength="60" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="dateOfAdmission">Date of Admission</label>
+                    <div class="input-wrapper">
+                        
+                        <input type="date" id="dateOfAdmission" name="dateOfAdmission" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="rollno">Illness / Diagnosis</label>
+                    <div class="input-wrapper">
+                  
+                        <input type="text" id="rollno" name="rollno" placeholder="e.g. Chronic Fever, Dengue" maxlength="100" required>
+                    </div>
+                </div>
+                
+                <button type="submit">Register Patient</button>
+            </form>
+            
+            <a href="/students" class="view-link">View Patients Directory <span>→</span></a>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,236 @@
+<style>
+        :root {
+            --primary: #05966800;
+            --primary-hover: #04785700;
+            --primary-gradient: linear-gradient(135deg, #05966800 0%, #064e3b00 100%);
+            --bg-gradient: radial-gradient(circle at 0% 0%, #f0fdf400 0%, #dcfce700 50%, #f0fdfa00 100%);
+            --card-bg: rgba(255, 255, 255, 0);
+            --text-main: #064e3b00;
+            --text-muted: #14532d00;
+            --border: #05966800;
+            --radius-lg: 24px;
+            --radius-md: 12px;
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: var(--bg-gradient);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            background: #a7f3d000;
+            filter: blur(130px);
+            top: 5%;
+            left: 10%;
+            z-index: -1;
+            border-radius: 50%;
+        }
+
+        body::after {
+            content: "";
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: #44b2dae8;
+            filter: blur(120px);
+            bottom: 5%;
+            right: 10%;
+            z-index: -1;
+            border-radius: 50%;
+        }
+
+        .main-wrapper {
+            display: flex;
+            background-color: var(--card-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: var(--radius-lg);
+            border: 1px solid rgba(255, 255, 255, 0);
+            box-shadow: 0 25px 50px -12px rgba(6, 78, 59, 0.08);
+            width: 100%;
+            max-width: 850px;
+            overflow: hidden;
+        }
+
+        .image-section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .form-section {
+            flex: 1;
+            padding: 3rem 2.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .brand-icon {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 0.25rem;
+            display: block;
+            filter: drop-shadow(0 4px 6px rgba(5, 150, 105, 0.2));
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            margin: 0 0 2rem 0;
+            color: #000000;
+            text-align: center;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        label {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: #000000;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .input-wrapper {
+            position: relative;
+        }
+
+        .input-wrapper span {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.1rem;
+            color: #00000000;
+            pointer-events: none;
+        }
+
+        input {
+            width: 100%;
+            padding: 1.05rem 1.25rem 1.05rem 2.6rem;
+            border: 2px solid var(--border);
+            border-radius: var(--radius-md);
+            font-size: 1rem;
+            font-family: inherit;
+            font-weight: 600;
+            color: #ffffff;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            box-sizing: border-box;
+            background-color: #ffffff;
+        }
+
+        input::placeholder {
+            color: #000000 !important;
+            opacity: 0.75;            
+        }
+
+        input:hover {
+            border-color: #ffffff;
+            background-color: #fdeded;      
+            border-radius: 10px;      
+        }
+
+        input:focus {
+            outline: none;
+            background-color: #ffffff;
+            border-color: #000000;
+            box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.25);
+            transform: translateY(-1px);            
+        }
+
+        input[type="date"] {
+            cursor: pointer;
+            color: #000000;            
+        }
+
+        button {
+            width: 100%;
+            padding: 1.1rem;
+            background: var(--primary-gradient);
+            color: rgb(0, 0, 0);
+            border: none;
+            border-radius: var(--radius-md);
+            font-size: 1rem;
+            font-family: inherit;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            margin-top: 1rem;
+            box-shadow: 0 10px 25px -6px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;            
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 28px -6px rgba(0, 0, 0, 0.4);
+            filter: brightness(1.08);            
+        }
+
+        button:active {
+            transform: translateY(1px);            
+        }
+
+        .view-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            margin-top: 1.75rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 700;
+            transition: all 0.2s ease;
+            gap: 6px;            
+        }
+
+        .view-link:hover {
+            color: var(--primary-hover);
+            gap: 10px;
+            text-decoration: underline;            
+        }
+
+        @media (max-width: 768px) {
+            .main-wrapper {
+                flex-direction: column;                
+            }
+
+            .image-section {
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+                padding: 1.5rem;
+            }
+        }
+    </style>
